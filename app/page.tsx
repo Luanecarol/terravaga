@@ -1,11 +1,15 @@
 import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import Stats from "@/components/Stats";
 
 export default function Home() {
   return (
     <main>
-      <Navbar/>
-      <h1>TerraVaga</h1>
-      <p>Plataforma de vagas para terraplanagem</p>
+      <Navbar />
+      <Hero />
+       <Stats />
     </main>
+       
+
   );
 }
