@@ -8,8 +8,10 @@ export default async function Vagas() {
   return (
     <main className="min-h-screen bg-gray-50">
       <Navbar />
-      <div className="max-w-6xl mx-auto px-6 py-10 flex gap-8">
-        <aside className="w-56 shrink-0">
+
+      <div className="max-w-6xl mx-auto px-4 md:px-6 py-8 flex flex-col md:flex-row gap-6">
+
+        <aside className="hidden md:block w-56 shrink-0">
           <div className="bg-white rounded-2xl p-5">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">
               Tipo de vaga
@@ -58,6 +60,7 @@ export default async function Vagas() {
             ))}
           </div>
         </div>
+
       </div>
     </main>
   );
