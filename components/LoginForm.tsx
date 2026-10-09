@@ -11,12 +11,12 @@ export default function LoginForm() {
   const [carregando, setCarregando] = useState(false);
   const router = useRouter();
 
-  async function handleLogin(e: React.FormEvent) {
+  async function handleLogin(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setCarregando(true);
     setErro("");
 
-    const { error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password: senha,
     });
@@ -27,7 +27,14 @@ export default function LoginForm() {
       return;
     }
 
-    router.push("/dashboard");
+    const tipo = data.user?.user_metadata?.tipo;
+
+
+    if (tipo === "empresa") {
+      router.push("/dashboard");
+    } else {
+      router.push("/perfil");
+    }
   }
 
   return (
